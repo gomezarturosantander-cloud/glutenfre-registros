@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#176b57">
+<title>Registros — GLUTENFRE</title>
+<style>
+  :root {
+    --green: #49b594;
+    --green-dark: #27866b;
+    --green-soft: #effaf6;
+    --yellow: #ffe10d;
+    --ink: #20312d;
+    --muted: #61716c;
+    --line: #d9e9e2;
+    --paper: #ffffff;
+    --bg: #49b594;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    position: relative; isolation: isolate;
+    margin: 0; padding: 36px 16px;
+    background: var(--bg); color: var(--ink);
+    font: 16px/1.55 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    min-height: 100vh;
+  }
+  body::before {
+    content: ""; position: fixed; z-index: -1; pointer-events: none;
+    width: min(180vw, 1500px); aspect-ratio: 1;
+    border-radius: 50%; background: var(--yellow);
+    top: -1120px; left: 50%; transform: translateX(-50%);
+  }
+  .page {
+    width: min(100%, 760px); margin: 0 auto; background: var(--paper);
+    border: 0; border-radius: 10px 10px 0 0; overflow: hidden;
+    box-shadow: 0 16px 44px rgba(18, 74, 58, .16);
+  }
+  .hero {
+    padding: 26px 28px 24px; background: var(--green);
+    border-bottom: 5px solid var(--yellow);
+  }
+  .hero-inner { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+  .brand-logo { flex: 0 0 auto; width: clamp(110px, 18vw, 150px); height: auto; display: block; }
+  .hero-text { flex: 1 1 220px; min-width: 0; }
+  h1 { font-family: Georgia, 'Times New Roman', Times, serif; font-weight: 700; color: #fff; font-size: clamp(19px, 2.7vw, 27px); line-height: 1.15; margin: 0 0 8px; letter-spacing: -.01em; }
+  .subtitle { font-family: Georgia, 'Times New Roman', Times, serif; margin: 0; font-size: 13px; line-height: 1.4; color: #fff; }
+
+  .intro { padding: 26px 28px 6px; }
+  .intro p { margin: 0; font-size: 14px; color: var(--muted); }
+
+  .options { padding: 10px 28px 30px; display: grid; gap: 14px; }
+  .option {
+    display: flex; align-items: center; gap: 16px;
+    border: 1px solid var(--line); border-radius: 14px;
+    padding: 18px 18px; text-decoration: none; color: var(--ink);
+    transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+  }
+  .option:hover, .option:focus-visible {
+    border-color: var(--green); box-shadow: 0 8px 20px rgba(18,74,58,.1);
+    transform: translateY(-1px);
+  }
+  .option-icon {
+    flex: 0 0 auto; width: 46px; height: 46px; border-radius: 12px;
+    background: var(--green-soft); display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+  }
+  .option-body { flex: 1 1 auto; min-width: 0; }
+  .option-body h2 { margin: 0 0 4px; font-size: 16px; color: var(--green-dark); }
+  .option-body p { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.45; }
+  .option-arrow { flex: 0 0 auto; color: var(--green-dark); font-size: 20px; }
+
+  .footer { text-align: center; padding: 0 22px 22px; font-size: 12px; color: var(--muted); }
+
+  @media (max-width: 560px) {
+    body { padding: 0; background: #fff; font-size: 15px; }
+    .page { border: 0; border-radius: 0; box-shadow: none; }
+    body::before { position: absolute; width: 180vw; top: -145vw; }
+    .hero { padding: 20px 20px 18px; }
+    .intro { padding: 20px 18px 4px; }
+    .options { padding: 10px 18px 24px; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="hero">
+    <div class="hero-inner">
+      <svg class="brand-logo" viewBox="515 82 260 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GlutenFre">
+        <g fill="#FFE10D">
+          <path d="M728.97,125.61c0,0.7-0.59,1.3-1.46,1.3h-9.35c-0.81,0-1.41-0.59-1.41-1.3c0-1.46,1.46-0.92,1.46-5.68v-9.95
+            c0-4.76-1.46-4.22-1.46-5.68c0-0.76,6.27-4.43,9.08-4.43c0.92,0,1.68,0.76,1.68,1.68v1.41c2-2.49,4.7-3.95,7.41-3.95
+            c3.84,0,7.24,2.49,7.24,6.97c0,3.57-2.22,5.35-4.59,5.35c-2.43,0-4.38-1.95-4.38-4.32c0-2.54,1.13-4.05-0.43-4.11
+            c-1.46-0.05-5.24,2.59-5.24,5.41v11.62C727.51,124.69,728.97,124.15,728.97,125.61z"/>
+          <path d="M756.32,99.01c6,0,11.95,3.78,13.19,8.49c2.49,9.41-19.68,4.49-14.86,11.68c1.62,2.43,4.11,3.95,7.62,3.68
+            c4.38-0.38,6.27-2.81,6.65-3.24c0.7-0.76,1.46-0.32,1.68-0.11c0.49,0.49,0.43,1.08,0.27,1.41c-1.73,3.24-6.43,6.87-12.81,6.87
+            c-8.32,0-15.08-6.43-15.08-14.38C742.97,105.44,748.32,99.01,756.32,99.01z M752.81,115.12c0.97-1.57,2.97-2.27,5.35-3.19
+            c5.35-2.11,2.38-10.32-1.84-10.32C752.38,101.61,751.24,109.82,752.81,115.12z"/>
+          <path d="M557,107.16h-10.44c-1.3,0-2.22,0.79-2.22,1.85c0,1.91,2.16,1.75,2.16,6.99c0,2.01-0.38,7.52-5.63,7.52
+            c-6.27,0-11.14-7.68-11.52-16.8c-0.32-7.21,1.89-16.85,10.11-16.85c5.84,0,8.76,3.07,11.57,8.9c0.32,0.69,1.08,1.06,1.89,0.9
+            c0.92-0.16,1.51-1.06,1.35-1.96l-1.68-8.95c-0.16-0.85-0.87-1.32-1.73-1.43c-1.11-0.14-6.92-0.85-11.41-0.85
+            c-11.79,0-21.36,9.22-21.36,20.24s9.57,20.19,21.36,20.19c2.43,0,15.14,0.04,15.79,0.04c0.97,0,1.73-0.74,1.73-1.7v-8.3
+            c0-6.68,2.16-5.93,2.16-7.95C559.17,107.95,558.3,107.16,557,107.16z"/>
+          <path d="M573.09,88.55c0-0.92-0.76-1.68-1.68-1.68c-2.81,0-9.09,3.68-9.09,4.44c0,1.46,1.46,0.92,1.46,5.73v22.88
+            c0,4.76-1.46,4.22-1.46,5.68c0,0.7,0.59,1.3,1.46,1.3h9.36c0.81,0,1.41-0.59,1.41-1.3c0-1.46-1.46-0.92-1.46-5.68V88.55z"/>
+          <path d="M605.86,101.53c0-0.92-0.76-1.68-1.68-1.68c-2.81,0-9.09,3.68-9.09,4.44c0,1.46,1.46,0.92,1.46,5.68v8.49
+            c0,2.54-2.27,4.11-4.38,4.11c-1.89,0-3.73-1.24-3.73-4.11v-16.93c0-0.92-0.76-1.68-1.68-1.68c-2.81,0-9.09,3.68-9.09,4.44
+            c0,1.46,1.46,0.92,1.46,5.68v6.76c0,7.9,3.89,11.03,8.6,11.03c3.19,0,6.49-1.62,8.82-4.22v2.22c0,0.59,0.49,1.14,1.14,1.14h8.17
+            c0.87,0,1.46-0.59,1.46-1.3c0-1.46-1.46-0.92-1.46-5.68V101.53z"/>
+          <path d="M626.15,122.95c-0.49,0-1.03,0.38-1.89,0.38c-1.14,0-2.33-0.97-2.33-4.16v-16.71h3.35c0.7,0,1.3-0.54,1.3-1.3
+            c0-0.7-0.6-1.3-1.3-1.3h-3.35v-6.49c0-0.92-0.76-1.68-1.68-1.68c-2.98,0-5.46,8.17-9.79,8.17c-0.76,0-1.35,0.6-1.35,1.3
+            c0,0.76,0.6,1.3,1.35,1.3h2.16v16.77c0,5.95,3.95,8.55,8.11,8.55c2.27,0,4.92-1.08,6.33-2.43c0.27-0.22,0.43-0.6,0.43-0.97
+            C627.5,123.6,626.9,122.95,626.15,122.95z"/>
+          <path d="M686.8,110.02c0-7.9-3.89-11.03-8.6-11.03c-3.19,0-6.54,1.68-8.82,4.22v-1.68c0-0.92-0.76-1.68-1.68-1.68
+            c-2.81,0-9.09,3.68-9.09,4.44c0,1.46,1.46,0.92,1.46,5.68V115c-2.27,3.62-5.3,7.46-12.06,7.84c-3.52,0.22-6-1.24-7.63-3.68
+            c-4.81-7.19,17.36-2.27,14.87-11.68c-1.24-4.71-7.19-8.49-13.2-8.49c-8.01,0-13.36,6.44-13.36,14.39
+            c0,7.95,6.76,14.39,15.09,14.39c8.37,0,13.11-4.15,16.15-8.36c0,0,0.25-0.35,0.24-0.35c2.06-2.87,3.3-5.68,4.22-7.14
+            c2.81-4.33,5.95-7.73,9.36-7.73c1.89,0,3.73,1.24,3.73,4.11v11.63c0,4.76-1.46,4.22-1.46,5.68c0,0.7,0.6,1.3,1.46,1.3h9.36
+            c0.81,0,1.41-0.59,1.41-1.3c0-1.46-1.46-0.92-1.46-5.68V110.02z M638.56,115.11c-1.57-5.3-0.43-13.52,3.52-13.52
+            c4.22,0,7.19,8.22,1.84,10.33C641.53,112.83,639.53,113.54,638.56,115.11z"/>
+          <path d="M720.16,88.71c-0.22-0.81-0.92-1.35-1.68-1.35h-24.93c-1.3,0-2.16,0.87-2.16,1.89c0,2.11,2.16,1.35,2.16,8.17
+            v19.42c0,6.82-2.16,6.06-2.16,8.17c0,1.03,0.87,1.89,2.16,1.89h10.49c1.3,0,2.22-0.81,2.22-1.84c0-2.11-2.22-1.35-2.22-8.17v-9.79
+            c6.82,0,6.06,2.16,8.17,2.16c1.03,0,1.89-0.92,1.89-2.16v-3.46c0-1.24-0.87-2.16-1.89-2.16c-2.11,0-1.35,2.16-8.17,2.16V90.82
+            h7.46c4.49,0,6,2.92,7.25,5.9c0.32,0.81,1.19,1.24,2.06,1.03c0.92-0.27,1.51-1.19,1.24-2.11L720.16,88.71z"/>
+          <path d="M661.27,126.9h9.36c0.87,0,1.46-0.59,1.46-1.3c0-1.46-1.46-0.92-1.46-5.68v-5.41c0-1.66-0.5-2.29-1.27-2.28
+            c-0.39,0.01-0.75,0.18-1.04,0.45c-2.57,2.43-8.46,11.62-8.46,12.92C659.87,126.3,660.46,126.9,661.27,126.9z"/>
+        </g>
+      </svg>
+      <div class="hero-text">
+        <h1>Registros</h1>
+        <p class="subtitle">Plataforma Digital Especializada para la Comunidad Celíaca</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="intro">
+    <p>Elegí el formulario que corresponde a tu perfil para manifestar tu interés y quedar en la lista de contacto preferencial.</p>
+  </div>
+
+  <div class="options">
+    <a class="option" href="comercios.html">
+      <span class="option-icon">🏬</span>
+      <span class="option-body">
+        <h2>Comercios y Productores</h2>
+        <p>Registro de Interés y Contacto Preferencial para establecimientos y proyectos.</p>
+      </span>
+      <span class="option-arrow">→</span>
+    </a>
+
+    <a class="option" href="influencers.html">
+      <span class="option-icon">🎙️</span>
+      <span class="option-body">
+        <h2>Creadores de Contenido</h2>
+        <p>Registro de Interés y Alianza con Creadores de Contenido e influencers.</p>
+      </span>
+      <span class="option-arrow">→</span>
+    </a>
+
+    <a class="option" href="profesionales.html">
+      <span class="option-icon">🩺</span>
+      <span class="option-body">
+        <h2>Profesionales de la Salud</h2>
+        <p>Registro de Interés y Alianza Profesional para nutricionistas y médicos.</p>
+      </span>
+      <span class="option-arrow">→</span>
+    </a>
+  </div>
+
+  <div class="footer">GLUTENFRE · Registro de interés preliminar</div>
+</main>
+</body>
+</html>
