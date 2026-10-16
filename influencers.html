@@ -231,19 +231,11 @@
 </main>
 <script>
   // ============================================================
-  // CONEXIÓN A FORMSPREE (formspree.io)
-  // ------------------------------------------------------------
-  // 1. Creá una cuenta gratis en https://formspree.io
-  // 2. New Form → ponele un nombre (ej. "Registros GlutenFre") y
-  //    confirmá el correo donde querés recibir los avisos.
-  // 3. Te da una URL tipo: https://formspree.io/f/xxxxxxxx
-  //    Pegala abajo en SUBMIT_ENDPOINT (la MISMA URL va en los 3
-  //    formularios — comercios, influencers y profesionales —, cada
-  //    envío ya lleva un campo "formulario" que dice cuál es cuál).
-  // 4. Las respuestas se ven en el dashboard de Formspree y también
-  //    llegan por correo a la cuenta con la que te registraste.
+  // CONEXIÓN A GOOGLE SHEETS (via Google Apps Script)
+  // Cada envío va a la planilla correspondiente (comercios,
+  // influencers o profesionales) según el campo oculto "formulario".
   // ============================================================
-  const SUBMIT_ENDPOINT = 'https://formspree.io/f/myeklvzz';
+  const SUBMIT_ENDPOINT = 'https://script.google.com/macros/s/AKfycbx5jesjGcnLFo_noL8u3-tz7ekLCXS5jHGvOKLHGCOMuu98_T981QSBW0BozY2vtaFQ0w/exec';
 
   const creatorInput = document.getElementById('creator');
   const creatorName = document.getElementById('creatorName');
@@ -282,7 +274,7 @@
     submitBtn.textContent = 'Enviando...';
 
     try {
-      const headers = { 'Content-Type': 'application/json', 'Accept': 'application/json' };
+      const headers = { 'Content-Type': 'text/plain;charset=utf-8' };
       const res = await fetch(SUBMIT_ENDPOINT, { method: 'POST', headers, body: JSON.stringify(data) });
       if (!res.ok) throw new Error('HTTP ' + res.status);
 
