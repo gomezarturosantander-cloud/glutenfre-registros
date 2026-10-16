@@ -287,10 +287,6 @@
 
     try {
       const headers = { 'Content-Type': 'application/json', 'Accept': 'application/json' };
-      if (SUPABASE_ANON_KEY) {
-        headers.apikey = SUPABASE_ANON_KEY;
-        headers.Authorization = 'Bearer ' + SUPABASE_ANON_KEY;
-      }
       const res = await fetch(SUBMIT_ENDPOINT, { method: 'POST', headers, body: JSON.stringify(data) });
       if (!res.ok) throw new Error('HTTP ' + res.status);
 
